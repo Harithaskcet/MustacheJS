@@ -1,0 +1,37 @@
+    <h1>Excited to learn</h1>
+    <h2>MustacheJS</h2>
+    <table class="tableColor">
+        <tr>
+        <th>Name</th>
+        <th>JobType</th>
+        </tr>
+    {{#users}} {{! iterating over the array}}
+     {{#show}} {{! if condition}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{&jobType}}</td>
+        </tr>
+      {{/show}}
+      </br>
+    {{^show}}  {{! Inverted section are executed when the key is not present, or the value is false, or the list is empty}}
+            learning inverted sections
+    {{/show}}
+    </br>
+    {{/users}}
+        </table>
+    </br>
+    <i>
+        {{#myLambda}}
+          {{#wrapped}} {{! here the text goes to the lambda function as 'David is my First Name'}}
+          {{name}} is my First Name
+          {{/wrapped}}
+          </br>
+          {{#sample}} {{! Invoking lambda function}}
+          is learning lambda expressions
+          {{/sample}}
+          </br>
+          </br>
+        {{/myLambda}}
+        </br>
+    </i>
+    
